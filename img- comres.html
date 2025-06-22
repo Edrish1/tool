@@ -1,0 +1,102 @@
+// App.jsx
+import React from 'react';
+import { Helmet } from 'react-helmet';
+
+// Dummy components, replace with your UI library if needed
+const Button = ({ children }) => <button className="border px-3 py-1 rounded hover:bg-gray-100">{children}</button>;
+const Card = ({ children }) => <div className="bg-white p-4 rounded-xl shadow">{children}</div>;
+const CardContent = ({ children }) => <div className="flex justify-between items-center">{children}</div>;
+
+export default function App() {
+  return (
+    <div className="min-h-screen bg-gray-100">
+      {/* SEO Tags */}
+      <Helmet>
+        <title>Image Tools - Free Online Image Editor</title>
+        <meta
+          name="description"
+          content="Free online tools: Image Upscaler, Background Remover, Image to PDF Converter, Image Enhancer, Cartoonify, Face Swap. All-in-one image editor with SEO optimization."
+        />
+        <meta
+          name="keywords"
+          content="image tools, image enhancer, background remover, cartoon image, pdf converter, photo tools, face swap"
+        />
+      </Helmet>
+
+      {/* Top Header */}
+      <header className="bg-white shadow p-4 flex justify-between items-center">
+        <div className="text-xl font-bold">Image Tools</div>
+        <nav className="space-x-4">
+          <Button>Home</Button>
+          <Button>Contact</Button>
+          <Button>About</Button>
+        </nav>
+      </header>
+
+      {/* Main Content */}
+      <main className="grid grid-cols-12 gap-4 p-4">
+        {/* Left Ad */}
+        <aside className="col-span-2 hidden md:block">
+          <div className="bg-white p-2 shadow rounded-xl h-full text-center">
+            <ins
+              className="adsbygoogle"
+              style={{ display: 'block' }}
+              data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+              data-ad-slot="1111111111"
+              data-ad-format="auto"
+              data-full-width-responsive="true"
+            ></ins>
+          </div>
+        </aside>
+
+        {/* Tools Center */}
+        <section className="col-span-12 md:col-span-8 space-y-4">
+          <h1 className="text-3xl font-bold mb-4">All Image Tools</h1>
+
+          {[
+            'Image Upscaler',
+            'Background Remover',
+            'Image to PDF Converter',
+            'Image Enhancer',
+            'Image to Cartoon',
+            'Face to Face Swap',
+          ].map((tool) => (
+            <Card key={tool}>
+              <CardContent>
+                <div>
+                  <h2 className="text-xl font-semibold">{tool}</h2>
+                  <p className="text-sm text-gray-500">Use {tool.toLowerCase()} easily</p>
+                </div>
+                <Button>Open Tool</Button>
+              </CardContent>
+            </Card>
+          ))}
+        </section>
+
+        {/* Right Ad */}
+        <aside className="col-span-2 hidden md:block">
+          <div className="bg-white p-2 shadow rounded-xl h-full text-center">
+            <ins
+              className="adsbygoogle"
+              style={{ display: 'block' }}
+              data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+              data-ad-slot="2222222222"
+              data-ad-format="auto"
+              data-full-width-responsive="true"
+            ></ins>
+          </div>
+        </aside>
+      </main>
+
+      {/* Footer */}
+      <footer className="bg-white p-4 text-center shadow mt-4">
+        <p className="text-sm text-gray-600">© 2025 Image Tools. All rights reserved.</p>
+      </footer>
+
+      {/* Google Ads Script */}
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <script>{`(adsbygoogle = window.adsbygoogle || []).push({});`}</script>
+    </div>
+  );
+}
+
